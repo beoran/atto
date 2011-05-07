@@ -1,0 +1,50 @@
+INTRODUCTION
+
+Atto is an ultra-tiny self-contained testing framework inspired by 
+and partially based on nanotest. It is self-contained in that it needs no 
+external libraries. Every file in this project is,and will remain under 100 
+lines long, comments included.
+
+
+USAGE
+
+To use it in your tests, for every ruby file lib/foo/bar.rb in your project,
+make a test file lib/foo/test_bar.rb and start it with: 
+
+require 'atto'
+include Atto::Test
+
+# Then you can add tests like this:
+assert "A test that will always suceed" do true end
+# Or like this :
+assert { Foo::Bar }
+
+Then run the command atto from your project directory and it will run the tests
+automatically, every time you change either the lib file or the test file. It 
+will also detect new files being added.
+
+LICENSE
+
+The MIT License
+
+Copyright (c) 2011 Beoran (beoran@rubyforge.org)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+
