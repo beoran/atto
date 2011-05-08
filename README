@@ -19,7 +19,7 @@ assert "A test that will always suceed" do true end
 assert { Foo::Bar }
 
 Then run the command atto from your project directory and it will run the tests
-in the test directory automatically, andthen, every time you change either a 
+in the test directory automatically, and then, every time you change either a 
 lib file or a test file, it will run the relevant test again. It will also 
 detect new files being added.
 
