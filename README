@@ -1,15 +1,14 @@
 INTRODUCTION
 
 Atto is an ultra-tiny self-contained testing framework inspired by 
-and partially based on nanotest. It is self-contained in that it needs no 
-external libraries. Every file in this project is,and will remain under 100 
-lines long, comments included.
-
+and partially based on nanotest by mynyml. It is self-contained in that it 
+needs no external libraries. Every file in this project is, and will remain
+under 100 lines long, comments included.
 
 USAGE
 
 To use it in your tests, for every ruby file lib/foo/bar.rb in your project,
-make a test file lib/foo/test_bar.rb and start it with: 
+make a test file lib/foo/test_bar.rb and start it with:
 
 require 'atto'
 include Atto::Test
@@ -20,8 +19,9 @@ assert "A test that will always suceed" do true end
 assert { Foo::Bar }
 
 Then run the command atto from your project directory and it will run the tests
-automatically, every time you change either the lib file or the test file. It 
-will also detect new files being added.
+in the test directory automatically, andthen, every time you change either a 
+lib file or a test file, it will run the relevant test again. It will also 
+detect new files being added.
 
 LICENSE
 
