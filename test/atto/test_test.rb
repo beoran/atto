@@ -1,10 +1,10 @@
 require 'atto'
 include Atto::Test
 
-assert "Atto is defined"                        do Atto                      end 
+assert "Atto is defined"                        do Atto                      end
 assert "Atto::Test is defined"                  do Atto::Test                end
 assert "Success can be detected"                do true                      end
-assert "Works with nexted asserts" do
+assert "Works with nested asserts" do
   assert "This is a nested assert"  do true end
 end
 
