@@ -8,15 +8,7 @@ module Atto
     
     # Find all Ruby all files under the named dir
     def all_files(name)
-      return Dir.new(name).inject([]) do |res, e| 
-        full   = File.join(name, e)
-        if Dir.exist?(full) &&  e !='.' && e != '..'
-          res += all_files(full)
-        else
-          res << full if full =~ /\.rb\Z/
-        end
-        res
-      end
+      Dir["#{name}/**/*_test.rb"]
     end
     
     # updates the timestamp info for files
