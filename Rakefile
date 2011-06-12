@@ -1,11 +1,10 @@
-# Rakefile added by John Mair (banisterfiend)
-
-require 'rake/gempackagetask'
+require 'rubygems'
+require 'rubygems/package_task'
 require 'rake/clean'
 CLEAN.include("pkg/*.gem")
 
 
-ATTO_VERSION = "0.9.0"
+ATTO_VERSION = "0.9.1"
 
 def apply_spec_defaults(s)
 end
@@ -28,7 +27,7 @@ spec = Gem::Specification.new do |s|
     s.executables   = "atto"
 end
 
-Rake::GemPackageTask.new(spec) do |pkg|
+Gem::PackageTask.new(spec) do |pkg|
         pkg.need_zip = false
         pkg.need_tar = false
 end
