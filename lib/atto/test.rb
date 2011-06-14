@@ -43,7 +43,7 @@ module Atto
       begin
         Timeout.timeout(delay) do res = block.call ; end
       rescue 
-        raised = $!
+        raised = $!.dup
       end
       return res, raised 
    end  

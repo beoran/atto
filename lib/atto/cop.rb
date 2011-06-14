@@ -1,7 +1,7 @@
 module Atto  
   # Cop is a module for commandline (and environment) options
   module Cop
-  
+
     # Gets an option from the environment. The key will be uppercased, prepended 
     # by the uppercase basename of $0 without extension and _, and any spaces, 
     # dashes will be replaced by underscores. Returns the value found, or 
