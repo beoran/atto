@@ -2,7 +2,7 @@ INTRODUCTION
 
 Atto is an ultra-tiny self-contained testing framework inspired by 
 and partially based on nanotest by mynyml. It is self-contained in that it 
-needs no external libraries. Every file in this project is, and will remain
+needs no external libraries. Every ruby file in this project is, and will remain
 under 100 lines long, comments included.
 
 USAGE
@@ -21,7 +21,35 @@ assert { Foo::Bar }
 Then run the command atto from your project directory and it will run the tests
 in the test directory automatically, and then, every time you change either a 
 lib file or a test file, it will run the relevant test again. It will also 
-detect new files being added.
+detect new files being added. 
+
+Since version 0.9.1, atto has a tiny command line and environment options
+module, and the atto command understands the following command line options:
+  --help        -h      Display a help message. 
+  --project=dir -pdir   Sets project directory.
+  --lib=sub     -lsub   Sets project library subdirectory.
+  --test=sub    -tsub   Sets project test subdirectory.
+  --skip        -s      Skips tests on startup.
+  
+Unknown options will be completely ignored. You may also set the corresponding 
+environment variables ATTO_HELP, ATTO_PROJECT, ATTO_LIB, ATTO_TEST, ATTO_SKIP
+for the same effect as the command line options.
+
+Most useful here is the --skip option which allows you to skip running all tests 
+on startup. This is invaluable for projects that have many slow-running tests.
+The help message made run.rb reach the 99 lines limit, so it looks like no new 
+features will be implemented in the atto command. :)
+
+To clear out any possible misunderstandings, --project is used to set the 
+project directory, --test and --lib are used to specify *sub*directory names.
+It is currently required that the test dir and the lib dir are subdirectories 
+of the project directory.
+
+For example:
+
+atto --project=~/src/foo --lib=libs --test=tests 
+
+Will run the tests in ~/src/foo/tests for the library files in ~/src/foo/libs.
 
 LICENSE
 

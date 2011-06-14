@@ -5,7 +5,7 @@ require 'rake/clean'
 CLEAN.include("pkg/*.gem")
 
 
-ATTO_VERSION = "0.9.0"
+ATTO_VERSION = "0.9.1"
 
 def apply_spec_defaults(s)
 end
